@@ -33,6 +33,6 @@ connection.addListener('ready', function() {
     
     server.listen(port, host);
     
-    console.log("Click producer listening on port %d in %s mode", 1337, 'nodensity');
+    console.log("Click producer listening on port %d at %s", 1337, 'http://nodensity');
 
 });

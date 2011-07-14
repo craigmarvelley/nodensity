@@ -1,5 +1,5 @@
 var amqp = require('amqp'),
-    mongo = require('mongodb'),
+    mongo = require('mongodb');
     
 var connection = amqp.createConnection();
 
@@ -47,5 +47,7 @@ connection.addListener('ready', function() {
 
         }
     );
+        
+    console.log('Listening for clicks');
 
 });
