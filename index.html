@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <h1>Nodensity</h1>
+        
+        <img src="image.jpg" width="600" height="388" />
+    
+        <script type="text/javascript">
+            
+            $(document).ready(function(){
+                
+                $("img").click(function(event){
+                    
+                    var x = event.clientX,
+                        y = event.clientY;
+                   
+                        $.ajax({
+                            url: 'click.php',
+                            data: {
+                                x: x,
+                                y: y
+                            },
+                            success:function(json){
+                                alert("Click recorded at " + x + ', ' + y);
+                            },
+                            error: function () {
+                                alert('Click not recorded');
+                            }
+                        });
+                   
+                });
+                
+            });
+            
+        </script>
+    </body>
+</html>
