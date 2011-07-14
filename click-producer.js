@@ -28,6 +28,11 @@ connection.addListener('ready', function() {
         
     });
     
-    server.listen(1337, "nodensity");
+    var port = 1337,
+        host = 'nodensity';
+    
+    server.listen(port, host);
+    
+    console.log("Click producer listening on port %d in %s mode", 1337, 'nodensity');
 
 });

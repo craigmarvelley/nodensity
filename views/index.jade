@@ -1,0 +1,12 @@
+h1 Nodensity clicks
+table
+  thead
+    tr
+      th X
+      th Y
+  tbody
+    - var items = [{name:'Foo',email:'foo@bar'}, {name:'Bar',email:'bar@bar'}]
+    - each click in clicks
+      tr
+        td= click.x
+        td= click.y

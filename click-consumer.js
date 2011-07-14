@@ -1,6 +1,5 @@
 var amqp = require('amqp'),
-    Db = require('mongodb').Db,
-    Server = require('mongodb').Server;
+    mongo = require('mongodb'),
     
 var connection = amqp.createConnection();
 
@@ -21,9 +20,9 @@ connection.addListener('ready', function() {
         queue.bind('click-exchange', 'click');
     });
     
-    new Db('nodensity', 
+    new mongo.Db('nodensity', 
     
-        new Server("127.0.0.1", 27017), {}).open(function(err, db) {
+        new mongo.Server("127.0.0.1", 27017), {}).open(function(err, db) {
             
             // Open the click collection in MongoDB
             db.collection('clicks', function(err, collection) {
